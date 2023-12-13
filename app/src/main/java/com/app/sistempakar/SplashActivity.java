@@ -1,0 +1,19 @@
+package com.app.sistempakar;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class SplashActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
+
+        TextView tv = findViewById(R.id.textView);
+        tv.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
+    }
+}
