@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sistem Pakar</string>
+    <string name="sistem_pakar">Sistem Pakar</string>
+    <string name="tumbuhan">Tumbuhan</string>
+    <string name="loading">Loading...</string>
+    <string name="pertanyaan_1">Pertanyaan 1</string>
 </resources>
