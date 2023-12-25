@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -35,20 +36,23 @@ public class HasilActivity extends AppCompatActivity {
 
 
         gambar = findViewById(R.id.image);
-        assert data != null;
-        switch (data) {
-            case "Mawar":
-                Picasso.get().load(R.drawable.mawar).fit().into(gambar);
-                break;
-            case "Anggrek":
-                Picasso.get().load(R.drawable.anggrek).fit().into(gambar);
-                break;
-            case "Lily":
-                Picasso.get().load(R.drawable.lily).fit().into(gambar);
-                break;
-            case "Matahari":
-                Picasso.get().load(R.drawable.matahari).fit().into(gambar);
-                break;
+        if (data != null){
+            switch (data) {
+                case "Mawar":
+                    Picasso.get().load(R.drawable.mawar).fit().into(gambar);
+                    break;
+                case "Anggrek":
+                    Picasso.get().load(R.drawable.anggrek).fit().into(gambar);
+                    break;
+                case "Lily":
+                    Picasso.get().load(R.drawable.lily).fit().into(gambar);
+                    break;
+                case "Matahari":
+                    Picasso.get().load(R.drawable.matahari).fit().into(gambar);
+                    break;
+            }
+        } else {
+            Toast.makeText(this, "Data Tidak Ada...", Toast.LENGTH_SHORT).show();
         }
     }
 }
