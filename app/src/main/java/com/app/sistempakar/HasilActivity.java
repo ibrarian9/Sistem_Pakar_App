@@ -24,13 +24,15 @@ public class HasilActivity extends AppCompatActivity {
         nama = findViewById(R.id.tvNama);
         nama.setText(data);
 
-        int hasil = getIntent().getIntExtra("hasil", 1);
-        persen = findViewById(R.id.tvPersen);
-        System.out.println("Nilai : " + hasil);
-        persen.setText("Persentase : " + hasil + "%");
-
+        int soal = getIntent().getIntExtra("soal", 0);
         int benar = getIntent().getIntExtra("benar", 0);
+        persen = findViewById(R.id.tvPersen);
+        System.out.println("Jumlah Soal : " + soal);
         System.out.println("benar : " + benar );
+        double hasil = (double) benar / soal;
+        System.out.println("hasil : " +  hasil);
+        persen.setText("Persentase : " + hasil * 100 + "%");
+
 
         gambar = findViewById(R.id.image);
         assert data != null;
