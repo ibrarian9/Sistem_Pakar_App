@@ -18,6 +18,16 @@
         android:orientation="vertical"
         tools:ignore="UseCompoundDrawables">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hasil"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/image"
             android:layout_marginStart="40dp"
