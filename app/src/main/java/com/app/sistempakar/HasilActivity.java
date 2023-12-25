@@ -2,19 +2,19 @@ package com.app.sistempakar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-
 public class HasilActivity extends AppCompatActivity {
 
-    TextView nama;
+    TextView nama, persen;
     ImageView gambar;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,14 @@ public class HasilActivity extends AppCompatActivity {
         String data = getIntent().getStringExtra("data");
         nama = findViewById(R.id.tvNama);
         nama.setText(data);
+
+        int hasil = getIntent().getIntExtra("hasil", 1);
+        persen = findViewById(R.id.tvPersen);
+        System.out.println("Nilai : " + hasil);
+        persen.setText("Persentase : " + hasil + "%");
+
+        int benar = getIntent().getIntExtra("benar", 0);
+        System.out.println("benar : " + benar );
 
         gambar = findViewById(R.id.image);
         assert data != null;

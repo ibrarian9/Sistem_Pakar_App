@@ -11,7 +11,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView question, tv, yes, no;
-    int num = 1;
+    int num = 0;
+    int persen = 0;
+    int nilai;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         yes.setOnClickListener( v -> {
             num++;
             tv.setText("Pertanyaan " + num);
+            nilai = persen += 1;
             if (question.getText().equals(R1)) {
                 question.setText(R3);
             } else if (question.getText().equals(R3)) {
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         no.setOnClickListener( v -> {
             num++;
             tv.setText("Pertanyaan " + num);
+            nilai = persen -= 1;
             if (question.getText().equals(R3)){
                 question.setText(R5A);
             } else if (question.getText().equals(R5A)) {
@@ -180,22 +184,34 @@ public class MainActivity extends AppCompatActivity {
     private void intentMawar() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Mawar");
+        int hasil = (nilai/num) * 100;
+        i.putExtra("hasil", hasil);
+        i.putExtra("benar", nilai);
         startActivity(i);
         finish();
     }
     private void intentAnggrek() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Anggrek");
+        int hasil = (nilai/num) * 100;
+        i.putExtra("hasil", hasil);
+        i.putExtra("benar", nilai);
         startActivity(i);
         finish();
     } private void intentLily() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Lily");
+        int hasil = (nilai/num) * 100;
+        i.putExtra("hasil", hasil);
+        i.putExtra("benar", nilai);
         startActivity(i);
         finish();
     } private void intentMatahari() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Matahari");
+        int hasil = (nilai/num) * 100;
+        i.putExtra("hasil", hasil);
+        i.putExtra("benar", nilai);
         startActivity(i);
         finish();
     }
