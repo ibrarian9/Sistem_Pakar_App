@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView question, tv, yes, no;
     int num = 1;
-    int persen = 0;
-    int nilai;
+    int persen = 1;
+    int nilai = 0;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
     private void intentMawar() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Mawar");
-        i.putExtra("soal", 7);
+        i.putExtra("soal", 8);
         i.putExtra("benar", nilai);
         startActivity(i);
         finish();
@@ -191,21 +191,21 @@ public class MainActivity extends AppCompatActivity {
     private void intentAnggrek() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Anggrek");
-        i.putExtra("soal", 8);
+        i.putExtra("soal", 9);
         i.putExtra("benar", nilai);
         startActivity(i);
         finish();
     } private void intentLily() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Lily");
-        i.putExtra("soal", 4);
+        i.putExtra("soal", 5);
         i.putExtra("benar", nilai);
         startActivity(i);
         finish();
     } private void intentMatahari() {
         Intent i = new Intent(this, HasilActivity.class);
         i.putExtra("data", "Matahari");
-        i.putExtra("soal", 9);
+        i.putExtra("soal", 10);
         i.putExtra("benar", nilai);
         startActivity(i);
         finish();
